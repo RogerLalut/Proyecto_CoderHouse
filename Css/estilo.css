@@ -1,0 +1,714 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*-------------------------------------------- PERSONALIZACIÓN DE SCROLL ------------------------------------ */
+
+body::-webkit-scrollbar{
+    width: 5px;
+}
+body::-webkit-scrollbar-thumb{
+    
+    background: #6b0707; 
+    border-radius: 15px;
+}
+/*----------------------------------------FIN PERSONALIZACIÓN DE SCROLL ------------------------------------ */
+body{
+    font-family: "Montserrat", sans-serif;
+}
+/*------------------------------------------------ INICIO INDEX--------------------------------------------- */
+
+.indexGrid{
+    display: grid;
+    width: 100%;
+    height: 100vh;    
+    grid-template-areas: 
+    "header"
+    "slider"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 3fr 0.5fr;  
+}
+.header{    
+    
+    height: 100%;     
+    background-color: #181A1B;
+    grid-area: header;   
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/*---------IMAGEN BANNER OK-----------*/ 
+.nav img{
+    display: flex;
+    width: 94px;
+    height: 90px;        
+}
+/*---------LISTAS BANNER OK-----------*/ 
+.nav li{    
+    list-style: none;   
+    font-size: small;      
+    display: contents;    
+}
+.nav ul{
+    display: flex;
+}
+
+/*---------TEXTOS BANNER OK-----------*/ 
+.nav ul a {
+    color: rgb(255, 255, 255);
+    margin-left: 20px;
+    text-decoration: none;      
+}
+/*---------EFECTO LETRA BANNER OK-----------*/ 
+.nav a:hover{
+    color: rgb(253, 70, 38);
+    transition: ease-in 0.4s;
+}
+/*---------SLIDER OK-----------*/ 
+.slider {
+    grid-area: slider;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.slider ul {
+    width: 100%;
+    height: 100%;
+}
+.slider ul li {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slider img {    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*----------TEXTO BODY INDEX ---------*/
+.text h1{
+    width: 450px;
+    height: 50px;
+    margin-top: -410px;
+    margin-left: 30px;
+    display: flex;
+    /* position: absolute; */
+    text-shadow: 0px 0px 13px black;
+    color: #f3f3f3;
+    -webkit-text-stroke: 0.5px #000000;
+}
+.text h4{    
+    width: auto;
+    height: 100px;    
+    margin-left: 30px;    
+    margin-right: 20px;  
+    text-shadow: 0px 0px 1px black;
+    color: #f3f3f3;
+    -webkit-text-stroke: 0.5px #000000;
+}
+
+.footer {   
+    grid-area: footer; 
+    width: 100%;
+    height:100px;    
+    background-color: #181A1B;
+}
+.footer div{
+    padding: 10px 27px 0 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+.footer ul{
+    display: flex;
+    padding: 0 15px 0 0;
+    /* height: auto; */
+    justify-content: end;
+    
+}
+.footer ul li {    
+    margin-top: 12px;
+    margin-right: 13px;
+    list-style: none;
+    text-decoration: none;        
+}
+
+
+/*--------------------------------------------- FIN INDEX -----------------------------------------------*/
+
+
+
+
+
+
+
+/*--------------------------------------------- IMAGENES PAGINAS -----------------------------------------------*/
+
+.paginas{   
+    background-color: #f3f3f3; 
+    background-repeat:no-repeat;
+    /*background-attachment:fixed;*/
+    background-size:cover;
+    background-position: center;
+}
+.img-destino{
+    background-image: url(../Imagenes/Img-destinos_2x.png);
+    height: 550px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.img-seguros{
+    background-image: url(../Imagenes/slide-4.jpg);
+    height: 550px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.img-aboutUs{
+    background-image: url(../Imagenes/sobre-nosotros-banner.jpg);
+    height: 550px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/*--------------------------------------------- FIN IMAGENES PAGINAS -------------------------------------------*/
+
+/*--------------------------------------------- TEXTO BAJO IMAGENES --------------------------------------------*/
+
+.h3cabeza{
+    font-family: 'Pacifico', cursive;   
+    letter-spacing: 50px;
+    font-size: x-small;  
+    text-align: center;
+    background: #181A1B;
+    color:#f3f3f3;    
+}
+/*----------------------------------------- FIN TEXTO BAJO IMAGENES --------------------------------------------*/
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 50px 0 50px 0; */
+    align-items: center;
+    justify-content: center;
+    position: inherit;
+    min-height: 100vh;
+    background-image: linear-gradient( 171.8deg,  rgba(5,111,146,1) 13.5%, rgba(6,57,84,1) 78.6% );
+}
+/*----------------------------------------- TARJETAS EQUIPO --------------------------------------------*/
+
+.tarjetaEquipo {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+    margin: 40px;
+}
+
+.tarjetaEquipo .contenido {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;  
+    text-align: center;  
+    padding: 20px;
+    background: #f3f3f3;
+}
+
+.tarjetaEquipo .contenido .imagenes {
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+.tarjetaEquipo .contenido .imagenes img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.tarjetaEquipo .contenido span {
+    position: absolute;
+    width: 350px;
+    height: 200px;
+    background: linear-gradient(to right, #070000, #6b0707);
+    transform: rotate(-35deg);
+    top: -50px;
+    left: -100px;
+}
+
+.tarjetaEquipo .contenido h4 {
+    font-size: 18px;
+    color: #1a1919;
+    margin-bottom: 5px;
+}
+
+.tarjetaEquipo .contenido h6 {
+    font-size: 13px;
+    color: #6b0707;
+}
+
+.tarjetaEquipo .contenido p {
+    font-size: 13px;
+    color: #1a161f;
+    margin-top: 10px;
+    text-align:justify;
+}
+
+.tarjetaEquipo .links {
+    position: absolute;
+    z-index: 90;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+    padding: 20px;
+    align-items: center;
+    right: 10px;
+    top: 15px;
+    transition: .5s;
+}
+
+.tarjetaEquipo:hover .links {
+    right: -50px;
+    border-radius: 0 10px 10px 0;
+}
+
+
+.tarjetaEquipo .links a {
+    font-size: 20px;
+    color: #646069;
+}
+
+.tarjetaEquipo .links a:nth-child(1):hover {
+    color: #0158ca;
+}
+
+.tarjetaEquipo .links a:nth-child(2):hover {
+    color: rgb(255, 135, 65);
+
+}
+
+.tarjetaEquipo .links a:nth-child(3):hover {
+    color: #1C93E4;
+}
+
+.tarjetaEquipo .links a:nth-child(4):hover {
+    color: #FE0000;
+}
+/*----------------------------------------- FIN TARJETAS EQUIPO --------------------------------------------*/
+
+/*--------------------------------------------- TARJETAS DESTINOS-SEGUROS --------------------------------------*/
+.card {
+    position: relative;    
+    width: 250px;
+    height: 350px;
+    margin: 20px;
+    gap: 10px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(3, 35, 54);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color: #f3f3f3;
+}
+
+.card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+    text-align: start;
+} 
+a{
+    text-decoration: none;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+/*----------------------------------------- FIN TARJETAS DESTINOS-SEGUROS --------------------------------------*/
+
+/*--------------------------------------------- FORMULARIO --------------------------------------*/
+.contactoGrid{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+.main {
+    grid-area: main;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.main img {    
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.formulario{
+    position: absolute;
+    margin-left: 40%;    
+    width: 50%;
+    height: 100vh;     
+    margin-top: 40px;
+    padding: 0 0 0 5em;
+}
+.formulario p{    
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    color: #f3f3f3;
+    padding: 10px;
+}
+.formulario p label{ 
+    width: 60%;   
+    padding: 0 0 10px 0;
+}
+.formulario p input{
+    color: #ffffff;
+    height: 30px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: solid 0.5px #c3c3c3;
+}
+.formulario p textarea{
+    color: #ffffff;
+    width: 100%;
+    height: 10em;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: solid 0.5px #c3c3c3;
+}
+input::placeholder{
+    color: #7eb98c7e;
+}
+textarea::placeholder{
+    color: #7eb98c7e;
+}
+.boton_enviar{
+    width: 100%;
+    padding: 10px;
+}
+.boton_enviar input{
+    width: 100%;
+    height: 2em;
+    border: none;
+    border-radius: 20px;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );      
+    transition: all 0.5s;
+}
+.boton_enviar input:hover{
+    color: #f3f3f3;    
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);  
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,152,155,1) 0.1%, rgba(0,94,120,1) 94.2% );
+}
+/*--------------------------------------------- FIN FORMULARIO --------------------------------------*/
+
+@media (min-width:0px){
+    .formulario {
+        padding: 0;
+        margin-left: 0;
+        width: 100%;
+        align-items: flex-start;        
+        display: flex;
+        flex-direction: column;
+    }               
+    .formulario p {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        color: #f3f3f3;
+        padding: 10px;
+    }
+    .formulario p textarea {
+        color: #ffffff;
+        width: 100%;
+        height: 10em;
+        resize: none;
+        border: none;        
+        background-color: transparent;
+        border-bottom: solid 0.5px #c3c3c3;
+    }
+    .formulario p label {
+        /* width: 59%; */
+        display: flex;
+        padding: 0 0 10px 0;
+        justify-content: space-around;
+    }
+    .boton_enviar input{
+        width: 100%;
+        margin-left: 10px;
+    }
+    .nav{
+        flex-direction: column;
+    }
+    .nav li{
+        font-size: xx-small;       
+    }
+    .nav ul li a{
+        
+        margin-left: 7px;
+    }   
+    .nav img{
+        width: 76px;
+        height: 72px;        
+    }  
+    .text h1{
+        font-size:20px;
+    }
+    .text h4{
+        font-size: 13px;
+    }
+    .footer div{
+        font-size:small;
+    }
+    .footer ul li {
+        margin-top: 2px;
+        padding: 15px;
+        margin-right: 7px;
+    }
+}
+@media  (min-width: 316px){
+    .formulario {
+        margin-top: 120px;
+        padding: 0;
+        margin-left: 0;
+        width: 100%;
+        align-items: center;        
+        display: flex;
+        flex-direction: column;
+    }               
+    .formulario p textarea {
+        color: #ffffff;
+        width: 100%;
+        height: 10em;
+        resize: none;
+        border: none;
+        /* outline: none; */
+        background-color: transparent;
+        border-bottom: solid 0.5px #c3c3c3;
+    }
+    .boton_enviar input{
+        width: 100%;
+    }
+    .nav{
+        flex-direction: column;
+    }
+    .nav li{
+        font-size: x-small;       
+    }
+    .nav ul li a{
+        padding: 1px;
+    }   
+    .nav img{
+        width: 76px;
+        height: 72px;        
+    }
+    
+}
+@media (min-width: 340px) {
+    .formulario {
+        margin-top: 120px;
+        padding: 0;
+        margin-left: 0;
+        width: 100%;
+        align-items: center;        
+        display: flex;
+        flex-direction: column;
+    }               
+    .formulario p textarea {
+        color: #ffffff;
+        width: 80%;
+        height: 10em;
+        resize: none;
+        border: none;
+        /* outline: none; */
+        background-color: transparent;
+        border-bottom: solid 0.5px #c3c3c3;
+    }
+    .formulario p input{       
+        width: 80%;
+        
+    }
+    .boton_enviar {
+        margin-left: -15px;
+        width: 80%;
+        
+    }
+    .boton_enviar input{
+        width: 100%;
+        
+    }
+    .nav{
+        flex-direction: column;
+    }
+    .nav li{
+        font-size: x-small;       
+    }
+    .nav ul li a{
+        padding: 4px;
+    }    
+    .footer ul li {
+        padding:8px;
+        margin-top: 12px;
+        margin-right: 13px;
+    }
+}
+@media (min-width:681px){    
+    .formulario{
+        width: 50%;
+        margin-left: 180px;
+    }
+    .formulario p{    
+        
+        width: 50%;
+        flex-direction: column;
+        
+        color: #f3f3f3;
+        padding: 10px;
+    }
+    .formulario p label{ 
+        justify-content: flex-start;
+        width: 100%;   
+        padding: 0 0 10px 0;
+    }
+    .formulario p input{
+        color: #ffffff;
+        height: 30px;
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        border-bottom: solid 0.5px #c3c3c3;
+    }
+    .formulario p textarea{
+        color: #ffffff;
+        width: 100%;
+        height: 10em;
+        resize: none;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        border-bottom: solid 0.5px #c3c3c3;
+    }
+    .boton_enviar {
+        width: 50%;
+        
+    }
+    .boton_enviar input{
+        width: 100%;
+        margin: 0;
+        
+    }
+    .nav li{
+        font-size:small;       
+    }
+    .nav{
+        flex-direction: row;
+    }
+    .nav ul li a {
+        padding: 10px;
+    }
+    .nav img{        
+        width: 94px;
+        height: 90px;        
+    }
+    .footer ul li {
+        padding:0;
+        margin-top: 12px;
+        margin-right: 13px;
+    }
+    
+}
+/* @media (min-width:800px){
+    .nav img{
+        
+        width: 94px;
+        height: 90px;        
+    }
+} */
+
+
