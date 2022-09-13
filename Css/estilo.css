@@ -25,71 +25,60 @@ body{
     height: 100vh;    
     grid-template-areas: 
     "header"
-    "slider"
+    "nav"
     "footer";
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr 3fr 0.5fr;  
 }
-.header{    
-    position: fixed;
+.header{        
     width: 100%;     
     background-color: #181A1B;
-    grid-area: header;  
-    z-index: 100; 
+    grid-area: header;       
 }
-.nav{
+.header .contenedor{
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 /*---------IMAGEN BANNER OK-----------*/ 
-.nav img{
+.header .contenedor img{
     display: flex;
     width: 94px;
     height: 90px;        
 }
 /*---------LISTAS BANNER OK-----------*/ 
-.nav li{    
+.header .contenedor li{    
     list-style: none;   
     font-size: small;      
     display: contents;    
 }
-.nav ul{
+.header .contenedor ul{
     display: flex;
 }
 
 /*---------TEXTOS BANNER OK-----------*/ 
-.nav ul a {
+.header .contenedor ul a {
     color: rgb(255, 255, 255);
     margin-left: 20px;
     text-decoration: none;      
 }
 /*---------EFECTO LETRA BANNER OK-----------*/ 
-.nav a:hover{
+.header .contenedor a:hover{
     color: rgb(253, 70, 38);
     transition: ease-in 0.4s;
 }
 /*---------SLIDER OK-----------*/ 
 .nav-imagen {
-    grid-area: slider;
+    grid-area: nav;
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
-.nav-imagen ul {
-    width: 100%;
+.nav-imagen img{
     height: 100%;
-}
-.nav-imagen ul li {
-    list-style: none;
     width: 100%;
-    height: 100%;
-}
-
-.nav-imagen img {    
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    
 }
 /*----------TEXTO BODY INDEX ---------*/
 .text h1{
@@ -116,7 +105,7 @@ body{
 .footer {   
     grid-area: footer; 
     width: 100%;
-    height:100px;    
+    height:100px;
     background-color: #181A1B;
 }
 .footer div{
@@ -124,13 +113,12 @@ body{
     color: #fff;
     display: flex;
     justify-content: space-between;
+    font-size: 13px;
 }
 .footer ul{
     display: flex;
     padding: 0 15px 0 0;
-    /* height: auto; */
-    justify-content: end;
-    
+    justify-content: end;    
 }
 .footer ul li {    
     margin-top: 12px;
@@ -183,27 +171,28 @@ body{
 
 /*--------------------------------------------- TEXTO BAJO IMAGENES --------------------------------------------*/
 
-.h3cabeza{
+.section{
     font-family: 'Pacifico', cursive;   
-    letter-spacing: 50px;
-    font-size: x-small;  
-    text-align: center;
-    background: #181A1B;
-    color:#f3f3f3;    
+    grid-area: section;
+    color: #f3f3f3;
+    background-color: #181A1B;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 11px;
+    height: 20px;
+    margin-top: -5px;
 }
 /*----------------------------------------- FIN TEXTO BAJO IMAGENES --------------------------------------------*/
 
 
-main {
-    display: flex;
-    flex-wrap: wrap;
-    /* padding: 50px 0 50px 0; */
-    align-items: center;
-    justify-content: center;
-    position: inherit;
-    min-height: 100vh;
+.main {
+    grid-area: main;
+    width: 100%;
+    height: 100%;
     background-image: linear-gradient( 171.8deg,  rgba(5,111,146,1) 13.5%, rgba(6,57,84,1) 78.6% );
+    overflow: hidden;
 }
+
 /*----------------------------------------- TARJETAS EQUIPO --------------------------------------------*/
 
 .tarjetaEquipo {
@@ -317,12 +306,22 @@ main {
 /*----------------------------------------- FIN TARJETAS EQUIPO --------------------------------------------*/
 
 /*--------------------------------------------- TARJETAS DESTINOS-SEGUROS --------------------------------------*/
+
+
+.sectionCard{
+    display: grid;    
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    gap: 50px 20px;
+    padding: 20px;
+}
 .card {
-    position: relative;    
+    position: relative;   
     width: 250px;
     height: 350px;
-    margin: 20px;
-    gap: 10px;
+    margin: 50px;
+    
 }
 
 .card .face {
@@ -401,6 +400,8 @@ a{
 .card:hover .back {
     transform: perspective(600px) rotateY(360deg);
 }
+
+
 /*----------------------------------------- FIN TARJETAS DESTINOS-SEGUROS --------------------------------------*/
 
 /*--------------------------------------------- FORMULARIO --------------------------------------*/
@@ -410,23 +411,17 @@ a{
     "header"
     "main"
     "footer";
-}
-.main {
-    grid-area: main;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
+} 
 .main img {    
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
-}
+    z-index: 90;
+} 
 .formulario{
-    position: absolute;
+    z-index: 100;
     margin-left: 40%;    
-    width: 50%;
-    height: 100vh;     
+    width: 50%;      
     margin-top: 40px;
     padding: 0 0 0 5em;
 }
@@ -488,6 +483,39 @@ textarea::placeholder{
 /*--------------------------------------------- FIN FORMULARIO --------------------------------------*/
 
 @media  (max-width: 500px){
+    .header .contenedor{
+        flex-direction: column;        
+    }
+    .header .contenedor img{
+        width: 84px;
+        height: 80px;        
+    }
+    .header .contenedor li{           
+        font-size: 10px;          
+    }
+    .header .contenedor ul a {
+        margin-left: 10px;             
+    }
+    .nav{
+        flex-direction: column;
+    }
+    .nav li{
+        font-size: xx-small;       
+    }
+    .nav ul li a{
+        
+        margin-left: 7px;
+    }   
+    .nav img{
+        width: 76px;
+        height: 72px;        
+    }  
+    .text h1{
+        font-size:20px;
+    }
+    .text h4{
+        font-size: 13px;
+    }
     .formulario {
         margin-top: 120px;
         padding: 0;
@@ -509,37 +537,70 @@ textarea::placeholder{
     }
     .boton_enviar input{
         width: 100%;
+        }       
+        .section{
+            height: 15px;
+            font-size: 10px;
+            align-items: center;
+            letter-spacing: 10px;
         }
-        .nav{
-            flex-direction: column;
+        .sectionCard{                
+            grid-template-columns: 1fr;
+            grid-template-rows: auto ;     
+            padding: 30px 10px 30px 10px;
         }
-        .nav li{
-            font-size: xx-small;       
+        .card {          
+            height: 150px;
+            width: 250px;
+            margin: 0px;        
         }
-        .nav ul li a{
+        .card .face {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: .5s;
+        }
+        .card .back h3 {
+            font-size: 20px;
+            padding-bottom: 10px;
+            margin-top: 3px;
+            letter-spacing: 5px;
+        }
+        .card .back p {
+            letter-spacing: 1px;
+            text-align: start;
+            font-size: 10px;
+        }
             
-            margin-left: 7px;
-        }   
-        .nav img{
-            width: 76px;
-            height: 72px;        
-        }  
-        .text h1{
-            font-size:20px;
+        .card .back .link {
+            border-top: solid 1px #f3f3f3;
+            height: 30px;
+            line-height: 40px;
         }
-        .text h4{
+        
+        .footer div {
+            padding: 10px 1px 10px 1px;
+        }
+        .footer div p{
             font-size: 13px;
         }
-        .footer div{
-            font-size:small;
+        .footer ul{
+        display: flex;
+        padding: 0; 
+        justify-content: space-evenly;
+        
         }
-        .footer ul li {
-            margin-top: 2px;
-            padding: 15px;
-            margin-right: 7px;  
+        .footer ul li {    
+        margin-top: 12px;
+        margin-right: 13px;
+        list-style: none;
+        text-decoration: none;        
         }
+        
 }
-@media (min-width: 500px) {
+@media (min-width: 501px) {
     .formulario {
         margin-top: 120px;
         padding: 0;
@@ -571,14 +632,39 @@ textarea::placeholder{
     .nav ul li a{
         padding: 4px;
         margin-left: 10px;
-    }    
-    .footer ul li {
-        padding:8px;
-        margin-top: 12px;
-        margin-right: 13px;
+    }
+    
+    .header .contenedor ul a {
+        margin-left: 15px;             
+    }
+
+    .sectionCard{                
+        grid-template-columns: 1fr;
+        grid-template-rows: auto ;     
+        padding: 30px 10px 30px 10px;
+    }
+    .card {          
+        height: 150px;
+        width: 250px;
+        margin: 0px;        
+    }   
+    .card .back h3 {
+        font-size: 20px;
+        padding-bottom: 10px;
+        margin-top: 3px;
+        letter-spacing: 5px;
+    }
+    .card .back p {
+        
+        font-size: 10px;
     }
     .footer div{
         font-size:small;
+    }
+    
+    .footer ul{
+        padding: 0;        
+        
     }
 }
 @media (min-width:800px){    
@@ -640,8 +726,39 @@ textarea::placeholder{
         width: 94px;
         height: 90px;        
     }
-    .footer ul li {
-        padding:0;           
+    .nav-imagen img{
+        height: 30rem;
     }
+    .header .contenedor li{
+        font-size:15px;
+    }
+        
+    .sectionCard{                
+        grid-template-columns: repeat(4, 1fr);
+        
+    }
+    .card {          
+        height: 250px;
+        width: 200px;
+        margin: 0px;        
+    }   
+    
+    .card .back p {    
+        font-size: 13px;
+    } 
+}
+@media (min-width: 950px){
+    .sectionCard{
+        grid-template-columns: repeat(3, 1fr);
+        padding: 30px 50px 30px 50px;
+    }
+    .card {          
+        height: 350px;
+        width: 250px;
+        margin: 0px;        
+    } 
+    .card .back p {    
+        font-size: 15px;
+    }  
 }
 
